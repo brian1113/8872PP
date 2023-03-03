@@ -14,7 +14,7 @@ import org.opencv.core.Rect;
 import java.util.function.BooleanSupplier;
 
 @Config
-public final class TurretSys extends ProfiledServoSubsystem {
+public class TurretSys extends ProfiledServoSubsystem {
     public static double maxVelocity = 3;
     public static double maxAcceleration = 3;
     private JunctionWithArea pipeline;

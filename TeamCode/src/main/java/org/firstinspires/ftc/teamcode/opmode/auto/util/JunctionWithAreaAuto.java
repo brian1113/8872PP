@@ -1,16 +1,16 @@
-package org.firstinspires.ftc.teamcode.vision.pipelines;
+package org.firstinspires.ftc.teamcode.opmode.auto.util;
 
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
 import org.openftc.easyopencv.OpenCvPipeline;
 import java.util.ArrayList;
 
-public class JunctionWithArea extends OpenCvPipeline {
+public class JunctionWithAreaAuto extends OpenCvPipeline {
     private Rect rect = null;
     private Rect ratioCheck;
     private final Scalar lowThresh = new Scalar(0, 50, 10);
     private final Scalar highThresh = new Scalar(255, 180, 95);
-    private Mat kernel = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new Size(1, 25));
+    private final Mat kernel = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new Size(1, 50));
     private final ArrayList<MatOfPoint> contours = new ArrayList<>();
 
     @Override
@@ -53,9 +53,5 @@ public class JunctionWithArea extends OpenCvPipeline {
     }
     public Rect getRect() {
         return rect;
-    }
-
-    public void setKernel(int height){
-        kernel = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new Size(1, height));
     }
 }
